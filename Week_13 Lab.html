@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Caculator</title>
+	<link rel="stylesheet" type="text/css" href="Week_13 Lab.css">
+</head>
+<body>
+	<div class="all">
+		<br>
+		<h2>JS Caculator</h2>
+
+		<p>Number1</p>
+		<input name = "name" type="text" id="num1">
+
+		<p>Number2</p>
+		<input name = "name" type="text" id="num2">
+
+		<p>Operator way</p>
+		<select name="rate" id="selectMenu">
+            <option value = "+" id="plus">+</option>
+            <option value = "-" id="minus">-</option>
+            <option value = "*" id="multiply">*</option>
+            <option value = "/" id="divide">/</option>
+         </select><br><br>
+
+         <input type="submit" value="See result!" class="button" onclick="runall()">
+         <div class="result">
+     		<table class="table" align="center" id="table">
+     			<tr class="top"><th class="top">result:</th></tr>
+				<tr><td id="new"></td></tr>
+			</table>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function runall(){
+		var num1 = parseInt(document.getElementById('num1').value);
+		var num2 = parseInt(document.getElementById('num2').value);
+		var work = document.getElementById('selectMenu').value;
+		document.getElementById("new").innerHTML=run(num1,num2,work);
+	}
+
+		function run(num1,num2,work){
+			if(work=="+"){
+				return num1+num2;
+			}
+
+			else if(work=="-"){
+				return num1-num2;
+			}
+
+			else if(work=="*"){
+				return num1*num2;
+			}
+
+			else {
+				return num1/num2;
+			}
+
+
+		}
+	</script>
+
+</body>
+</html>
